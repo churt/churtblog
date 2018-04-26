@@ -1,0 +1,36 @@
+{{!< default}}
+{{! Top line inserts this template on main layout}}
+
+{{! Tag posts feed template start}}
+<header id="tag-page-opener-human" style="{{#if @blog.cover_image}}background-image: url({{@blog.cover_image}}){{/if}}">
+	{{> menu}}
+
+	<div id="head-color-human"></div>
+
+	{{#if @blog.logo}}
+	<a href="{{@blog.url}}">
+		<img id="corner-logo-human" src="{{@blog.logo}}" alt="{{@blog.title}} Logo">
+	</a>
+	{{else}}
+	<h1 id="corner-blog-title-human"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+	{{/if}}
+
+	<div id="tag-page-info-human" class="diffuse-elements">
+		<h2>
+			<span>{{plural pagination.total empty='No posts' singular='% post' plural='% posts'}} about</span> <br>
+			{{tag.name}}
+		</h2>
+	</div>
+</header>
+
+<main id="post-feed-human">
+
+	{{! Pagination links - displayed only on paged layout}}
+	<div id="pagination-top-human">
+	{{pagination}}
+	</div>
+
+	{{! Loop of posts for current page}}
+	{{> loop}}
+	
+</main>

@@ -1,0 +1,60 @@
+{{!< default}}
+{{! Top line inserts this template on main layout}}
+
+{{! Main content - Author posts feed section}}
+<main id="main-nview">
+	{{! Pagination top links - displayed on paged temmplates}}
+	<div id="top-paged-nav-nview">
+	{{pagination}}
+	</div>
+	
+	<section id="tag-or-author-column">
+		
+		<div class="solid-division"></div>
+
+		{{#author}}
+		{{#if profile_image}}
+		<img class="author-pic" src="{{img_url profile_image}}" alt="{{name}}">
+		{{/if}}
+
+		<h2 class="author-name"><a href="{{url}}">{{name}}</a></h2>
+
+		{{#if location}}
+		<span class="author-location"><i class="fa fa-map-marker"></i> {{location}}</span>
+		{{/if}}
+
+		{{#if website}}
+		<a class="author-website" href="{{website}}">{{website}}</a>
+		{{/if}}
+		
+		<br>
+		<span class="author-count">	
+		<i class="fa fa-files-o"></i> {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
+		</span>
+
+		{{#if bio}}
+		<p class="author-bio">{{bio}}</p>
+		{{/if}}
+
+		<div class="author-social-links">
+			{{#if twitter}}
+			<a class="author-twitter" href="{{twitter_url}}"><i class="fa fa-twitter"></i></a>
+			{{/if}}
+
+			{{#if facebook}}
+			<a class="author-facebook" href="{{facebook_url}}"><i class="fa fa-facebook"></i></a>
+			{{/if}}
+		</div>
+
+		<a href="{{url}}rss/" class="subscribe-to-it">
+			<span class="fa fa-rss"></span> Subscribe to {{name}}
+		</a>
+		{{/author}}
+		
+	</section><section id="feed-at-right-column">	
+	{{> loop}}
+	</section>
+	
+	{{! Pagination links - displayed on every page}}
+	{{pagination}}
+</main>

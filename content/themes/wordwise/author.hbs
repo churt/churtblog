@@ -1,0 +1,58 @@
+{{!< default}}
+{{! Top line inserts this template on main layout}}
+
+{{! Main Author content section}}
+<main id="main-wwise">
+	
+	<section id="tag-author-page-wwise">
+
+		{{#author}}
+		{{#if profile_image}}
+		<img class="author-pic" src="{{img_url profile_image}}" alt="{{name}}">
+		{{/if}}
+
+		<h1 class="author-name"><a href="{{url}}">{{name}}</a></h1>
+
+		{{#if website}}
+		<a class="author-website" href="{{website}}">{{website}}</a>
+		{{/if}}
+		
+		<span class="author-count">	
+		<i class="fa fa-area-chart"></i> {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
+		</span>
+
+		<div class="author-location-social">
+			{{#if location}}
+			<span class="author-location"><i class="fa fa-map-marker"></i> {{location}}</span>
+			{{/if}}
+
+			{{#if twitter}}
+			<a class="author-twitter" href="{{twitter_url}}"><i class="fa fa-twitter"></i></a>
+			{{/if}}
+
+			{{#if facebook}}
+			<a class="author-facebook" href="{{facebook_url}}"><i class="fa fa-facebook"></i></a>
+			{{/if}}
+		</div>
+
+		{{#if bio}}
+		<p class="author-bio">{{bio}}</p>
+		{{/if}}
+
+		<a href="{{url}}rss/" class="subscribe-to-it">
+			<span class="fa fa-rss"></span> Subscribe to {{name}}
+		</a>
+		{{/author}}
+
+	</section>
+
+	{{! Pagination top links - displayed on paged temmplates}}
+	<div id="top-paged-nav-wwise">
+	{{pagination}}
+	</div>
+
+	{{> loop}}
+	
+	{{! Pagination links - displayed on every page}}
+	{{pagination}}
+</main>

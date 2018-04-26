@@ -1,0 +1,52 @@
+<!-- start post -->
+{{#foreach posts}}
+<article class="{{post_class}}">
+	{{#if featured}}
+	<div class="featured">
+		<i class="fa fa-star"></i>
+	</div>
+	{{/if}}
+
+	{{#has tag="roundup"}}
+	<div class="roundup">
+		<i class="far fa-link"></i>
+	</div>
+	{{/has}}
+
+
+	<div class="post-head">
+		<h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+		<h5 class="post-excerpt">{{excerpt}}</h5>
+		{{!--{{#has tag="lynx-roundup"}}Lynx Roundup {{#get "tags" filter="tag:link-roundup" include="count.posts"}}X of {{count.posts}}{{/has}}--}}
+
+		{{!--<div class="post-meta">
+			<span class="author"><i class="far fa-user"></i> {{authors separator=", "}}</span>
+			<span class="date"><i class="fal fa-calendar"></i> <span>{{date format="MMMM DD"}}</span></span><!-- &bull;
+			<span class="comment-count"><a href="{{url}}#disqus_thread">{{t "0 Comments"}}</a></span>-->
+		</div>--}}
+	</div>
+	{{#if feature_image}}
+	<div class="featured-media">
+		<a href="{{url}}"><img src="{{feature_image}}" alt="{{{title}}}"></a>
+	</div>
+	{{/if}}
+	<div class="post-content">
+			{{content words="50"}}
+	</div>
+	<div class="post-permalink">
+		<div class="pull-left tag-list">
+			<span class="author"><i class="far fa-user"></i><span>{{#author}}{{slug}}{{/author}}</span></span>
+			<span class="tags">
+			{{#if tags}}
+				<i class="fal fa-tags"></i>
+			{{tags limit="1"}}
+			{{/if}}
+			</span>
+			<span class="date"><i class="fal fa-calendar"></i> <span>{{date format="MMMM DD"}}</span></span>
+		</span>
+		</div>
+		<a href="{{url}}" class="btn btn-default">{{t "Continue Reading"}}</a>
+	</div>
+</article>
+{{/foreach}}
+<!-- end post -->

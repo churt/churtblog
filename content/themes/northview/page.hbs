@@ -1,0 +1,23 @@
+{{!< default}}
+{{! Top line inserts this template on main layout}}
+
+{{! Page template }}
+{{#post}}
+<main id="main-nview">
+	<article id="post-page-nview" class="{{post_class}} {{#if feature_image}}cover-arrange{{/if}}">
+		
+		{{#if feature_image}}
+		<div id="post-page-cover-nview"
+		style="background-image:url({{img_url feature_image}})"></div>
+		{{/if}}
+
+		<section id="post-content-nview">
+			<header id="header-post-content-nview">
+				<h1>{{title}}</h1>
+			</header>
+			{{content}}
+		</section>
+
+	</article>
+</main>
+{{/post}}

@@ -1,0 +1,15 @@
+<div id="menu-btn-human">MENU <span class="fa fa-reorder"></span></div>
+<nav id="menu-human">
+	{{navigation}}
+
+	<ul id="social-links-human">
+		{{#if @blog.twitter}}
+			<li><a href="{{twitter_url}}" class="twitter fa fa-twitter"></a></li>
+		{{/if}}
+		{{#if @blog.facebook}}
+			<li><a href="{{facebook_url}}" class="facebook fa fa-facebook"></a></li>
+		{{/if}}
+	</ul>
+
+	<section id="widgets-area-a" class="widgets-area"></section>
+</nav>

@@ -1,0 +1,64 @@
+{{!< default}}
+{{! Top line inserts this template on main layout}}
+
+{{! Author template start}}
+<header id="author-head-human" style="{{#if author.cover_image}}background-image: url({{author.cover_image}}){{else}}{{#if @blog.cover_image}}background-image: url({{@blog.cover_image}}){{/if}}{{/if}}">
+	{{> menu}}
+
+	<div id="head-color-human"></div>
+
+	{{#if @blog.logo}}
+	<a href="{{@blog.url}}">
+		<img id="corner-logo-human" src="{{@blog.logo}}" alt="{{@blog.title}} Logo">
+	</a>
+	{{else}}
+	<h1 id="corner-blog-title-human"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+	{{/if}}
+
+	<div id="author-page-info-human" class="diffuse-elements">
+		{{#author}}
+
+		<div class="meta">
+			{{#if profile_image}}
+			<img class="author-pic" src="{{img_url profile_image}}" alt="{{name}}">
+			{{/if}}
+		
+			<h1 class="author-name">{{name}}</h1>
+			{{#if website}}
+			<a class="author-website" href="{{website}}">{{website}}</a>
+			{{/if}}
+
+			{{#if location}}
+			<span class="author-location"><i class="fa fa-map-marker"></i>{{location}}</span>
+			{{/if}}
+
+			<div class="author-social-links">
+				{{#if twitter}}
+				<a class="author-twitter" href="{{twitter_url}}"><i class="fa fa-twitter"></i> {{twitter}}</a>
+				{{/if}}
+
+				{{#if facebook}}
+				<a class="author-facebook" href="{{facebook_url}}"><i class="fa fa-facebook"></i> {{facebook}}</a>
+				{{/if}}
+			</div>
+
+			<span class="fa fa-files-o"></span> {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
+		</div>
+
+		<p class="author-bio">{{bio}}</p>
+		
+		{{/author}}
+	</div>
+</header>
+
+<main id="post-feed-human">
+
+	{{! Pagination links - displayed only on paged layout}}
+	<div id="pagination-top-human">
+	{{pagination}}
+	</div>
+
+	{{! Loop of posts for current page}}
+	{{> loop}}
+	
+</main>

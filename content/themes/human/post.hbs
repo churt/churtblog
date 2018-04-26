@@ -1,0 +1,120 @@
+{{!< default}}
+{{! Top line inserts this template on main layout}}
+
+{{#post}}
+<header id="head-page-human" style="{{#if feature_image}}background-image: url({{img_url feature_image}}){{/if}}">
+	{{> menu}}
+
+	<div id="head-color-human"></div>
+
+	{{#if @blog.logo}}
+	<a href="{{@blog.url}}">
+		<img id="corner-logo-human" src="{{@blog.logo}}" alt="{{@blog.title}} Logo">
+	</a>
+	{{else}}
+	<h1 id="corner-blog-title-human"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+	{{/if}}
+</header>
+
+{{! Post template start}}
+<main id="main-post-human">
+	<article class="{{post_class}}">
+
+		<header id="in-post-header-human">
+			<h1 class="post-title-human">{{title}}</h1>
+			<span class="post-meta-human"><time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="LL"}}</time> • on: {{tags separator=", "}}</span>	
+		</header>
+	
+		<div class="floats-wrapper">
+		<section id="in-post-content-human">
+			{{content}}
+		</section>
+
+		<footer id="in-post-footer-human">
+			<section class="post-author-human">
+				{{#author}}
+				<div class="author-data">
+					{{#if profile_image}}
+					<img class="author-pic" src="{{img_url profile_image}}" alt="{{name}}">
+					{{/if}}
+
+					<h4><a href="{{url}}">{{name}}</a></h4>
+
+					{{#if website}}
+					<a class="author-website" href="{{website}}">{{website}}</a>
+					{{/if}}
+
+					{{#if location}}
+					<span class="author-location"><i class="fa fa-map-marker"></i>{{location}}</span>
+					{{/if}}
+
+					<div class="author-social-links">
+						{{#if twitter}}
+						<a class="author-twitter" href="{{twitter_url}}"><i class="fa fa-twitter"></i> {{twitter}}</a>
+						{{/if}}
+
+						{{#if facebook}}
+						<a class="author-facebook" href="{{facebook_url}}"><i class="fa fa-facebook"></i> {{facebook}}</a>
+						{{/if}}
+					</div>
+
+					{{#if bio}}
+					<p>
+						{{bio}}
+					</p>
+					{{/if}}
+
+				</div>
+				{{/author}}
+			</section>
+			<section class="share-post">
+				<span class="share-label">SHARE THIS POST</span>
+				<ul>
+					<li>
+						<a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" 
+						onclick="window.open(this.href,'facebook-share','width=580,height=296');return false;"
+						class="facebook-share">
+						<span class="fa fa-facebook"></span> Facebook</a>
+					</li>
+					<li>
+						<a href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}" class="twitter-share"
+						onclick="window.open(this.href,'twitter-share','width=550,height=235');return false;">
+						<span class="fa fa-twitter"></span> Twitter</a>
+					</li>
+					<li>
+						<a href="https://plus.google.com/share?url={{url absolute="true"}}" 
+						onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" class="gplus-share">
+						<span class="fa fa-google-plus"></span> Google+</a>
+					</li>
+				</ul>
+			</section>
+			<section class="jump-to-posts">
+				<h3>More from {{@blog.title}}</h3>
+			
+				{{#next_post}}
+				<article class="more-from-blog next-post">
+					<h4>{{title}}</h4>
+					<p>
+						{{excerpt words="30"}}...
+					</p>
+					<a href="{{url}}">See Article</a>
+				</article>
+				{{/next_post}}
+
+				{{#prev_post}}
+				<article class="more-from-blog prev-post">
+					<h4>{{title}}</h4>
+					<p>
+						{{excerpt words="30"}}...
+					</p>
+					<a href="{{url}}">See Article</a>
+				</article>
+				{{/prev_post}}
+			</section>
+		</footer>
+		
+		<section id="comments-area-in-post"></section>
+		</div>
+	</article>
+</main>
+{{/post}}

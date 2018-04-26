@@ -1,0 +1,17 @@
+{{! Footer partial template}}
+<footer id="footer-wsong">
+	<section id="widgets-area-a" class="widgets-area"></section>
+	<section id="bottom-footer">
+		<ul id="social-links-footer-wsong">
+			{{#if @blog.twitter}}
+				<li><a href="{{twitter_url}}" class="twitter fa fa-twitter"></a></li>
+			{{/if}}
+			{{#if @blog.facebook}}
+				<li><a href="{{facebook_url}}" class="facebook fa fa-facebook"></a></li>
+			{{/if}}
+		</ul>
+		<div>
+			<p id="bottom-copyright">&copy; {{date format="YYYY"}}, {{@blog.title}}. Envision Theme by <a href="//aftertype.com">Aftertype</a>. Powered by <a href="//ghost.org">Ghost</a>.</p>
+		</div>
+	</section>
+</footer>

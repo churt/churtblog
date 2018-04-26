@@ -1,0 +1,30 @@
+{{!< default}}
+{{! Top line inserts this template on main layout}}
+
+{{! Main content - Tag posts feed section}}
+<main id="main-nview">
+	{{! Pagination top links - displayed on paged temmplates}}
+	<div id="top-paged-nav-nview">
+	{{pagination}}
+	</div>
+	
+	<section id="tag-or-author-column">
+		
+		<h2 class="tag-page-info">
+			<span>
+				There {{plural pagination.total empty='No posts' singular='is % post' plural='are % posts'}} about
+			</span>
+			<br>
+			#{{tag.name}}
+		</h2>
+		<a href="{{@blog.url}}/tag/{{tag.slug}}/rss/" class="subscribe-to-it">
+			<span class="fa fa-rss"></span> Subscribe to {{tag.name}}
+		</a>
+		
+	</section><section id="feed-at-right-column">	
+	{{> loop}}
+	</section>
+	
+	{{! Pagination links - displayed on every page}}
+	{{pagination}}
+</main>

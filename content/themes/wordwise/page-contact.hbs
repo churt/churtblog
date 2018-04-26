@@ -1,0 +1,26 @@
+{{!< default}}
+{{! Top line inserts this template on main layout}}
+
+{{! Contact Page template }}
+{{#post}}
+<main id="main-wwise">
+	<article id="post-page-wwise" class="{{post_class}}">
+
+		<header id="header-post-content-wwise">
+			<h1>{{title}}</h1>
+		</header>
+
+		{{#if feature_image}}
+		<div id="post-page-cover-wwise"
+		style="background-image:url({{img_url feature_image}})"></div>
+		{{/if}}
+
+		<section id="post-content-wwise">
+			{{content}}
+
+			<div id="contact-page-form-human" class="contact-page-form-rc"></div>
+		</section>
+ 
+	</article>
+</main>
+{{/post}}

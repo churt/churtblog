@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>{{meta_title}}</title>
+
+	<meta name="HandheldFriendly" content="True">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="shortcut icon" href="{{asset "favicon.png"}}">
+
+	<!--[if lt IE 9]>
+	<script src="//cdn.jsdelivr.net/nwmatcher/1.2.5/nwmatcher.min.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv-printshiv.min.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/css3-mediaqueries/0.1/css3-mediaqueries.min.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script>
+	<![endif]-->
+
+	{{! Styles}}
+	<link rel="stylesheet" type="text/css" href="https://cdn.aftertype.com/vendor/normalize/latest.css" />
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,300italic,400italic,700italic|Open+Sans:700" />
+	<link rel="stylesheet" type="text/css" href="https://cdn.aftertype.com/vendor/font-awesome/latest/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdn.aftertype.com/vendor/prettify/sunburst.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdn.aftertype.com/css/assistant.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdn.aftertype.com/css/envision.css" />
+
+	{{! Ghost OUTPUT Data}}
+	{{ghost_head}}
+</head>
+<body class="{{body_class}}" data-ghost_url="{{@blog.url}}">
+	{{> admin_dash}}
+
+	{{{body}}}
+
+	{{> footer}}
+
+	{{! Ghost OUTPUT Data}}
+	{{ghost_foot}}
+
+	{{! Javascript files for the theme and Aftertype Services }}
+	<script data-main="{{asset "js/envision-main.js"}}" 
+    type="text/javascript" src="https://cdn.aftertype.com/vendor/require/latest.min.js"></script>
+	
+</body>
+</html>

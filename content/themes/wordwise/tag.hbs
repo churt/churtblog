@@ -1,0 +1,30 @@
+{{!< default}}
+{{! Top line inserts this template on main layout}}
+
+{{! Main Tag content section}}
+<main id="main-wwise">
+	
+	<section id="tag-author-page-wwise">
+		<h1 class="tag-page-info">
+			<span>
+				{{plural pagination.total empty='No posts' singular='% post' plural='% posts'}} tagged under
+			</span>
+			<br>
+			{{tag.name}}
+		</h1>
+
+		<a href="{{@blog.url}}/tag/{{tag.slug}}/rss/" class="subscribe-to-it">
+			<span class="fa fa-rss"></span> Subscribe to {{tag.name}}
+		</a>
+	</section>
+
+	{{! Pagination top links - displayed on paged temmplates}}
+	<div id="top-paged-nav-wwise">
+	{{pagination}}
+	</div>
+
+	{{> loop}}
+	
+	{{! Pagination links - displayed on every page}}
+	{{pagination}}
+</main>

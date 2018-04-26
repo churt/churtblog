@@ -1,0 +1,34 @@
+{{! Header partial template}}
+<header id="header-nview">
+	<div id="top-head-nview">
+
+		{{#if @blog.logo}}
+		<a href="{{@blog.url}}">
+		<img id="main-logo-nview" src="{{@blog.logo}}" alt="{{@blog.title}}">
+		</a>
+		{{else}}
+		<h1 id="main-name-nview"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+		{{/if}}
+
+		<nav id="main-nav-nview">
+			<span id="mobile-menu-ignite-nview" class="fa fa-reorder"></span>
+			{{navigation}}
+		</nav>
+	</div>
+	
+	<div id="the-description-nview">
+	{{#if @blog.description}}
+		<p>
+			{{@blog.description}}
+		</p>
+	{{/if}}
+	<ul id="social-links-head-nview">
+		{{#if @blog.twitter}}
+		<li><a href="{{twitter_url}}" class="twitter fa fa-twitter"></a></li>
+		{{/if}}
+		{{#if @blog.facebook}}
+		<li><a href="{{facebook_url}}" class="facebook fa fa-facebook"></a></li>
+		{{/if}}
+	</ul>
+	</div>
+</header>

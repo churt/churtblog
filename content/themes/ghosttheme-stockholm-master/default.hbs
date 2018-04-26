@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+	{{! Document Settings }}
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	{{! Page Meta }}
+	<title>{{meta_title}}</title>
+	<meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- stylesheets -->
+	{{! Styles'n'Scripts }}
+	<link rel="stylesheet" href="https://use.typekit.net/okj4emy.css">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-KwxQKNj2D0XKEW5O/Y6haRH39PE/xry8SAoLbpbCMraqlX7kUP6KHOnrlrtvuJLR" crossorigin="anonymous">
+	<link rel="stylesheet" href="{{asset "css/bootstrap.min.css"}}">
+	<link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}">
+	<link rel="stylesheet" type="text/css" href="{{asset "css/hl-styles/code.css"}}">
+	{{#is "post"}}
+	<meta property="og:image" content="{{img_url feature_image}}">
+	{{else}}
+	<meta property="og:image" content="https://miscellaneous.nyc3.digitaloceanspaces.com/hack.jpg"/>
+	{{/is}}
+	<script src="{{asset "/js/jquery.min.js"}}"></script>
+	<!-- only for demo -->
+	<!-- <link rel="stylesheet" type="text/css" href="{{asset "demo-assets/css/colpick.css"}}"> -->
+	{{! inserting theme config partial}}
+	{{> config}}
+	{{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+
+</head>
+<body class="{{body_class}}">
+	{{! insert header partial}}
+	{{> header}}
+
+	{{{body}}}
+
+	{{! insert footer partial}}
+
+{{> footer}}

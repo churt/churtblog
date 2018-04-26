@@ -1,0 +1,31 @@
+{{! Header partial template}}
+<header id="main-head-wwise">
+	<nav id="main-nav-wwise">
+		<span id="mobile-menu-ignite-wwise" class="fa fa-reorder"></span>
+		{{navigation}}
+	</nav>
+
+	{{#if @blog.logo}}
+	<a href="{{@blog.url}}">
+	<img id="main-logo-wwise" src="{{@blog.logo}}" alt="{{@blog.title}}">
+	</a>
+	{{else}}
+	<h1 id="main-name-wwise"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+	{{/if}}
+
+	{{#if @blog.description}}
+	<p id="main-description-wwise">
+		{{@blog.description}}
+	</p>
+	{{/if}}
+
+	<ul id="social-links-head-wwise">
+		{{#if @blog.twitter}}
+			<li><a href="{{twitter_url}}" class="twitter fa fa-twitter"></a></li>
+		{{/if}}
+		{{#if @blog.facebook}}
+			<li><a href="{{facebook_url}}" class="facebook fa fa-facebook"></a></li>
+		{{/if}}
+		<li><a href="{{@blog.url}}/rss" class="fa fa-rss"></a></li>
+	</ul>
+</header>

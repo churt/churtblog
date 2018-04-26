@@ -1,0 +1,15 @@
+{{!< default}}
+{{! Top line inserts this template on main layout}}
+
+{{! Main content section}}
+<main id="main-wwise">
+	{{! Pagination top links - displayed on paged temmplates}}
+	<div id="top-paged-nav-wwise">
+	{{pagination}}
+	</div>
+
+	{{> loop}}
+	
+	{{! Pagination links - displayed on every page}}
+	{{pagination}}
+</main>

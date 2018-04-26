@@ -1,0 +1,32 @@
+{{! Loop partial that displays the articles query on posts feed}}
+
+{{#foreach posts}}
+<article class="{{post_class}} feed-post">
+	{{#if feature_image}}
+	<div class="thumbnail-container" 
+	style="background-image:url({{img_url feature_image}})"></div>
+	{{/if}}
+
+	<header class="post-feed-head">
+		<h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+		<span class="post-meta-info">
+			<time>{{date format="MMMM DD, YYYY"}}</time> 
+			• by {{author}} 
+			{{#if tags}}
+			on: {{tags separator=", "}}
+			{{/if}}
+		</span>
+	</header>
+
+	<section class="post-feed-content">
+		<p class="post-excerpt">	
+		{{excerpt words="54"}}...
+		</p>
+
+		<a href="{{url}}" class="read-more-link">
+			Keep Reading
+		</a>
+	</section>
+
+</article>
+{{/foreach}}
