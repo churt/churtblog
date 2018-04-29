@@ -5,6 +5,6 @@
     "port": "2368"
   },
   "storage": {
-    "active": 'ghost-imgur'
-  }
+    "active": "ghost-imgur"
+  },
 }
