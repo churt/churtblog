@@ -1,0 +1,32 @@
+{{!< default}}
+{{! Top line inserts this template on main layout}}
+
+{{#post}}
+<header id="head-page-human" style="{{#if feature_image}}background-image: url({{img_url feature_image}}){{/if}}">
+	{{> menu}}
+
+	<div id="head-color-human"></div>
+
+	{{#if @blog.logo}}
+	<a href="{{@blog.url}}">
+		<img id="corner-logo-human" src="{{@blog.logo}}" alt="{{@blog.title}} Logo">
+	</a>
+	{{else}}
+	<h1 id="corner-blog-title-human"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+	{{/if}}
+</header>
+
+{{! Post template start}}
+<main id="main-post-human">
+	<article class="{{post_class}}">
+
+		<header id="in-post-header-human">
+			<h1 class="post-title-human">{{title}}</h1>
+		</header>
+
+		<section id="in-post-content-human">
+			{{content}}
+		</section>
+	</article>
+</main>
+{{/post}}

@@ -1,0 +1,58 @@
+{
+  "_from": "ghost-imgur@^0.1.0",
+  "_id": "ghost-imgur@0.1.0",
+  "_inBundle": false,
+  "_integrity": "sha1-Y7FlJYrGJLFkCKj11dfkwHZdjEg=",
+  "_location": "/ghost-imgur",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "ghost-imgur@^0.1.0",
+    "name": "ghost-imgur",
+    "escapedName": "ghost-imgur",
+    "rawSpec": "^0.1.0",
+    "saveSpec": null,
+    "fetchSpec": "^0.1.0"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/ghost-imgur/-/ghost-imgur-0.1.0.tgz",
+  "_shasum": "63b165258ac624b16408a8f5d5d7e4c0765d8c48",
+  "_spec": "ghost-imgur@^0.1.0",
+  "_where": "/Users/churt/workspace/personal/blog/versions/1.22.4",
+  "author": {
+    "name": "Phil Huang",
+    "email": "wrenth04@gmail.com",
+    "url": "https://blog-wrenth04.rhcloud.com"
+  },
+  "bugs": {
+    "url": "https://github.com/wrenth04/ghost-imgur"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "bluebird": "^3.3.1",
+    "imgur": "^0.1.7"
+  },
+  "deprecated": false,
+  "description": "imgur storage for ghost blog.",
+  "homepage": "https://github.com/wrenth04/ghost-imgur",
+  "keywords": [
+    "Ghost",
+    "imgur",
+    "ghost-imgur"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "ghost-imgur",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wrenth04/ghost-imgur.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.1.0"
+}
