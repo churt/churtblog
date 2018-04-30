@@ -8,6 +8,6 @@
     "active": "ghost-imgur"
   },
   "paths": {
-    "contentPath": "content"
+    "contentPath": "content/"
   }
 }
