@@ -8,6 +8,6 @@
     "active": "ghost-imgur"
   },
   "paths": {
-    "contentPath": "/Users/churt/workspace/personal/blog/current/content"
+    "contentPath": "content"
   }
 }
